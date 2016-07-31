@@ -10,6 +10,14 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *numberOfBoxes;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *areaScroller;
+
+
+
+
+
 
 @end
 

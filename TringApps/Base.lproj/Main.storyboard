@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,78 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSN-6Z-EpA">
+                                <rect key="frame" x="497" y="28" width="80" height="30"/>
+                                <color key="backgroundColor" red="0.78267421155283456" green="1" blue="0.025392333139778844" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeBoxes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tn5-Hq-sgT"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="F3n-yb-7H2">
+                                <rect key="frame" x="20" y="82" width="560" height="498"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="yPT-E3-9L5"/>
+                                </connections>
+                            </scrollView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="250" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X73-kN-jgl">
+                                <rect key="frame" x="20" y="28" width="381" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="250" constant="282" id="zrI-EY-6g4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98Z-un-LhI">
+                                <rect key="frame" x="409" y="28" width="80" height="30"/>
+                                <color key="backgroundColor" red="0.78852992102294051" green="1" blue="0.04523931949796034" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="e5S-4Z-Foj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Restore">
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restoreBoxes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJ7-qE-D7B"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="X73-kN-jgl" secondAttribute="leading" id="0du-uz-d3C"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="F3n-yb-7H2" secondAttribute="leading" id="3qe-l7-tyV"/>
+                            <constraint firstItem="CSN-6Z-EpA" firstAttribute="leading" secondItem="98Z-un-LhI" secondAttribute="trailing" constant="8" symbolic="YES" id="8zJ-s5-geQ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="X73-kN-jgl" secondAttribute="leading" id="Hyi-R9-fpp"/>
+                            <constraint firstItem="98Z-un-LhI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="K5S-MK-C2Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F3n-yb-7H2" secondAttribute="trailing" id="Oec-GV-pbY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="98Z-un-LhI" secondAttribute="trailing" constant="91" id="XvT-IU-POk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="F3n-yb-7H2" secondAttribute="bottom" constant="20" id="Z2D-SR-TNk"/>
+                            <constraint firstItem="98Z-un-LhI" firstAttribute="width" secondItem="CSN-6Z-EpA" secondAttribute="width" id="cs0-Nl-bXW"/>
+                            <constraint firstItem="F3n-yb-7H2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="62" id="hkM-6U-jya"/>
+                            <constraint firstItem="CSN-6Z-EpA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="oun-yu-YOI"/>
+                            <constraint firstItem="X73-kN-jgl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="uQ6-W4-E7p"/>
+                            <constraint firstItem="98Z-un-LhI" firstAttribute="leading" secondItem="X73-kN-jgl" secondAttribute="trailing" constant="8" symbolic="YES" id="yXk-Ef-9fr"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Hyi-R9-fpp"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="areaScroller" destination="F3n-yb-7H2" id="cGI-2Q-PYa"/>
+                        <outlet property="numberOfBoxes" destination="X73-kN-jgl" id="5YD-Sy-PLb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="375" y="286"/>
         </scene>
     </scenes>
 </document>
